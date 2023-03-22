@@ -1,0 +1,12 @@
+{
+    "name": "wickedreports/api-core",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "Wickedreports\\ApiCore\\": "src/"
+        }
+    },
+    "require": {
+        "php": ">=7.4"
+    }
+}
