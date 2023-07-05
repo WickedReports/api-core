@@ -2,13 +2,23 @@
 
 namespace Wickedreports\ApiCore\Collections;
 
-abstract class AbstractCollection implements
+use Wickedreports\ApiCore\Exception\ValidationException;
+
+abstract class AbstractValidCollection implements
     \Iterator,
     \Countable,
     \ArrayAccess
 {
     protected array $collection = [];
     private int $position = 0;
+
+    /**
+     * @throws ValidationException
+     */
+    public function __construct($items)
+    {
+        $this->setCollection($items);
+    }
 
     public function current()
     {
@@ -64,5 +74,37 @@ abstract class AbstractCollection implements
     public function count(): int
     {
         return count($this->collection);
+    }
+
+    /**
+     * @throws ValidationException
+     */
+    public function add($item): void
+    {
+        if (!$this->isValidItem($item)) {
+            throw new ValidationException('Invalid item.');
+        }
+
+        $this->collection[] = $item;
+    }
+
+    /**
+     * Method works as validator per collection element.
+     */
+    abstract protected function isValidItem($item): bool;
+
+    /**
+     * @param array|\Iterator $items
+     * @throws ValidationException
+     */
+    private function setCollection($items): void
+    {
+        foreach ($items as $key => $item) {
+            try {
+                $this->add($item);
+            } catch (ValidationException $e) {
+                throw new ValidationException('Invalid list item: ' . $key);
+            }
+        }
     }
 }
