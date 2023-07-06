@@ -1,6 +1,7 @@
 {
     "name": "wickedreports/api-core",
     "type": "library",
+    "license": "MIT",
     "autoload": {
         "psr-4": {
             "Wickedreports\\ApiCore\\": "src/"
