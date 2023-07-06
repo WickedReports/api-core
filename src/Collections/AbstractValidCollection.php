@@ -13,9 +13,10 @@ abstract class AbstractValidCollection implements
     private int $position = 0;
 
     /**
+     * @param array|\Iterator $items
      * @throws ValidationException
      */
-    public function __construct($items)
+    public function __construct(\Iterator $items)
     {
         $this->setCollection($items);
     }
@@ -99,7 +100,7 @@ abstract class AbstractValidCollection implements
      * @param array|\Iterator $items
      * @throws ValidationException
      */
-    private function setCollection($items): void
+    private function setCollection(\Iterator $items): void
     {
         foreach ($items as $key => $item) {
             try {
