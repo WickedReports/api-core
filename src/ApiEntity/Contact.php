@@ -4,10 +4,10 @@ namespace Wickedreports\ApiCore\ApiEntity;
 
 final class Contact
 {
-    private ?string $sourceSystem = null;
-    private ?string $sourceId = null;
-    private ?\DateTime $createDate = null;
-    private ?string $email = null;
+    private string $sourceSystem;
+    private string $sourceId;
+    private \DateTime $createDate;
+    private string $email;
 
     private ?string $firstName = null;
     private ?string $lastName = null;
@@ -16,6 +16,18 @@ final class Contact
     private ?string $country = null;
     private ?string $ipAddress = null;
     private ?string $phone = null;
+
+    public function __construct(
+        string $sourceSystem,
+        string $sourceId,
+        \DateTime $createDate,
+        string $email
+    ) {
+        $this->sourceSystem = $sourceSystem;
+        $this->sourceId = $sourceId;
+        $this->createDate = $createDate;
+        $this->email = $email;
+    }
 
     public function getSourceSystem(): ?string
     {

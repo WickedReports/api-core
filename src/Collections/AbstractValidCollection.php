@@ -89,7 +89,9 @@ abstract class AbstractValidCollection implements
     }
 
     /**
-     * Method works as validator per collection element.
+     * Method works as validator per collection element. We can check classname, but we should not deal with
+     * field values validations here -> that would go against Single responsibility. Field values validation should be
+     * implemented in separate class/service.
      */
     abstract protected function isValidItem($item): bool;
 
