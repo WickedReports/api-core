@@ -3,12 +3,12 @@
 namespace Wickedreports\ApiCore\Collections\ApiEntityCollections;
 
 use Wickedreports\ApiCore\Collections\AbstractValidCollection;
-use Wickedreports\ApiCore\ApiEntity\Payment;
+use Wickedreports\ApiCore\ApiEntity\OrderPayment;
 
-final class PaymentCollection extends AbstractValidCollection
+final class OrderPaymentCollection extends AbstractValidCollection
 {
     protected function isValidItem($item): bool
     {
-        return $item instanceof Payment;
+        return $item instanceof OrderPayment;
     }
 }

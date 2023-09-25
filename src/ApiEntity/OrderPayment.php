@@ -2,7 +2,7 @@
 
 namespace Wickedreports\ApiCore\ApiEntity;
 
-final class Payment
+final class OrderPayment
 {
     private string $sourceSystem;
     private string $orderId;
