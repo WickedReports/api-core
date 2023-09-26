@@ -12,6 +12,12 @@ final class OrderPayment
     private ?string $currency = null;
     private ?string $status = null;
 
+    public const STATUS_APPROVED = 'APPROVED';
+    public const STATUS_FAILED = 'FAILED';
+    public const STATUS_REFUNDED = 'REFUNDED';
+    public const STATUS_CREDIT = 'CREDIT';
+    public const STATUS_PENDING = 'PENDING';
+
     public function __construct(
         string $sourceSystem,
         string $orderId,
