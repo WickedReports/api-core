@@ -2,6 +2,8 @@
 
 namespace Wickedreports\ApiCore\ApiEntity;
 
+use Wickedreports\ApiCore\Collections\ApiEntityCollections\OrderItemCollection;
+use Wickedreports\ApiCore\Collections\ApiEntityCollections\OrderPaymentCollection;
 
 final class Order
 {
@@ -10,29 +12,33 @@ final class Order
     private \DateTime $createDate;
     private string $contactId;
     private string $contactEmail;
-
-    private ?float $total = null;
+    private float $total = 0;
+    
     private ?string $currency = null;
     private ?string $city = null;
     private ?string $state = null;
     private ?string $country = null;
     private ?string $ipAddress = null;
     private ?string $subscriptionId = null;
-    private ?array $items = null;
-    private ?array $payments = null;
+    private ?OrderItemCollection $items = null;
+    private ?OrderPaymentCollection $payments = null;
+
+    private ?\DateTime $modifiedDate;
 
     public function __construct(
         string $sourceSystem,
         string $sourceId,
         \DateTime $createDate,
         string $contactId,
-        string $contactEmail
+        string $contactEmail,
+        float $total
     ) {
         $this->sourceSystem = $sourceSystem;
         $this->sourceId = $sourceId;
         $this->createDate = $createDate;
         $this->contactId = $contactId;
         $this->contactEmail = $contactEmail;
+        $this->total = $total;
     }
 
     public function getSourceSystem(): ?string
@@ -179,26 +185,38 @@ final class Order
         return $this;
     }
 
-    public function getItems(): ?array
+    public function getItems(): ?OrderItemCollection
     {
         return $this->items;
     }
 
-    public function setItems(?array $value): self
+    public function setItems(?OrderItemCollection $value): self
     {
         $this->items = $value;
 
         return $this;
     }
 
-    public function getPayments(): ?array
+    public function getPayments(): ?OrderPaymentCollection
     {
         return $this->payments;
     }
 
-    public function setPayments(?array $value): self
+    public function setPayments(?OrderPaymentCollection $value): self
     {
         $this->payments = $value;
+
+        return $this;
+    }
+
+    public function getModifiedDate(): \DateTime
+    {
+        return $this->modifiedDate;
+    }
+
+    public function setModifiedDate(\DateTime $value): self
+    {
+        $this->modifiedDate = $value;
 
         return $this;
     }
