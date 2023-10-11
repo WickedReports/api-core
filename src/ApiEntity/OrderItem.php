@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Wickedreports\ApiCore\ApiEntity;
 
-final class Item
+final class OrderItem
 {
     private string $sourceSystem;
     private string $orderId;

@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Wickedreports\ApiCore\ApiEntity;
 
-use Wickedreports\ApiCore\Collections\ApiEntityCollections\ItemCollection;
-use Wickedreports\ApiCore\Collections\ApiEntityCollections\PaymentCollection;
+use Wickedreports\ApiCore\Collections\ApiEntityCollections\OrderItemCollection;
+use Wickedreports\ApiCore\Collections\ApiEntityCollections\OrderPaymentCollection;
 
 final class Order
 {
@@ -22,8 +22,8 @@ final class Order
     private ?string $country = null;
     private ?string $subscriptionId = null;
     private ?string $ipAddress = null;
-    private ?ItemCollection $items = null;
-    private ?PaymentCollection $payments = null;
+    private ?OrderItemCollection $items = null;
+    private ?OrderPaymentCollection $payments = null;
 
     public function __construct(
         string $sourceSystem,
@@ -179,24 +179,24 @@ final class Order
         return $this;
     }
 
-    public function getItems(): ?ItemCollection
+    public function getItems(): ?OrderItemCollection
     {
         return $this->items;
     }
 
-    public function setItems(?ItemCollection $value): self
+    public function setItems(?OrderItemCollection $value): self
     {
         $this->items = $value;
 
         return $this;
     }
 
-    public function getPayments(): ?PaymentCollection
+    public function getPayments(): ?OrderPaymentCollection
     {
         return $this->payments;
     }
 
-    public function setPayments(?PaymentCollection $value): self
+    public function setPayments(?OrderPaymentCollection $value): self
     {
         $this->payments = $value;
 

@@ -2,8 +2,8 @@
 
 namespace Wickedreports\ApiCore\Collections\ApiEntityCollections;
 
-use Wickedreports\ApiCore\Collections\AbstractValidCollection;
 use Wickedreports\ApiCore\ApiEntity\Contact;
+use Wickedreports\ApiCore\Collections\AbstractValidCollection;
 
 final class ContactCollection extends AbstractValidCollection
 {
