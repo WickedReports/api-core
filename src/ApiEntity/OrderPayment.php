@@ -9,21 +9,21 @@ final class OrderPayment
     private string $sourceSystem;
     private string $orderId;
     private float $amount;
-    private string $status;
+    private \DateTime $paymentDate;
 
-    private ?\DateTime $paymentDate = null;
+    private ?string $status = null;
     private ?string $currency = null;
 
     public function __construct(
         string $sourceSystem,
         string $orderId,
         float $amount,
-        string $status
+        \DateTime $paymentDate
     ) {
         $this->sourceSystem = $sourceSystem;
         $this->orderId = $orderId;
         $this->amount = $amount;
-        $this->status = $status;
+        $this->paymentDate = $paymentDate;
     }
 
     public function getSourceSystem(): string
@@ -50,12 +50,12 @@ final class OrderPayment
         return $this;
     }
 
-    public function getStatus(): string
+    public function getStatus(): ?string
     {
         return $this->status;
     }
 
-    public function setStatus(string $value): self
+    public function setStatus(?string $value): self
     {
         $this->status = $value;
 
@@ -75,12 +75,12 @@ final class OrderPayment
     }
 
 
-    public function getPaymentDate(): ?\DateTime
+    public function getPaymentDate(): \DateTime
     {
         return $this->paymentDate;
     }
 
-    public function setPaymentDate(?\DateTime $value): self
+    public function setPaymentDate(\DateTime $value): self
     {
         $this->paymentDate = $value;
 

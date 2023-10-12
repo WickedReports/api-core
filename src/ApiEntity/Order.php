@@ -12,10 +12,10 @@ final class Order
     private string $sourceSystem;
     private string $sourceId;
     private \DateTime $createDate;
+    private float $orderTotal;
 
     private ?string $contactId = null;
     private ?string $contactEmail = null;
-    private ?float $orderTotal = null;
     private ?string $orderCurrency = null;
     private ?string $city = null;
     private ?string $state = null;
@@ -28,11 +28,13 @@ final class Order
     public function __construct(
         string $sourceSystem,
         string $sourceId,
-        \DateTime $createDate
+        \DateTime $createDate,
+        float $orderTotal
     ) {
         $this->sourceSystem = $sourceSystem;
         $this->sourceId = $sourceId;
         $this->createDate = $createDate;
+        $this->orderTotal = $orderTotal;
     }
 
     public function getSourceSystem(): string
@@ -95,12 +97,12 @@ final class Order
         return $this;
     }
 
-    public function getOrderTotal(): ?float
+    public function getOrderTotal(): float
     {
         return $this->orderTotal;
     }
 
-    public function setOrderTotal(?float $value): self
+    public function setOrderTotal(float $value): self
     {
         $this->orderTotal = $value;
 
