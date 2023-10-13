@@ -2,13 +2,13 @@
 
 namespace Wickedreports\ApiCore\Collections\ApiEntityCollections;
 
-use Wickedreports\ApiCore\ApiEntity\Contact;
+use Wickedreports\ApiCore\ApiEntity\Order;
 use Wickedreports\ApiCore\Collections\AbstractValidCollection;
 
-final class ContactCollection extends AbstractValidCollection
+final class OrderCollection extends AbstractValidCollection
 {
     protected function isValidItem($item): bool
     {
-        return $item instanceof Contact;
+        return $item instanceof Order;
     }
 }
