@@ -6,30 +6,30 @@ namespace Wickedreports\ApiCore\ApiEntity;
 
 class NestedOrderItem
 {
-    private string $sourceId;
+    private string $orderItemId;
     private float $pricePerUnit;
     private int $quantity;
 
     private ?string $productId = null;
 
     public function __construct(
-        string $sourceId,
+        string $orderItemId,
         int $quantity,
         float $pricePerUnit
     ) {
-        $this->sourceId = $sourceId;
+        $this->orderItemId = $orderItemId;
         $this->quantity = $quantity;
         $this->pricePerUnit = $pricePerUnit;
     }
 
-    public function getSourceId(): string
+    public function getOrderItemId(): string
     {
-        return $this->sourceId;
+        return $this->orderItemId;
     }
 
-    public function setSourceId(string $value): self
+    public function setOrderItemId(string $value): self
     {
-        $this->sourceId = $value;
+        $this->orderItemId = $value;
 
         return $this;
     }
