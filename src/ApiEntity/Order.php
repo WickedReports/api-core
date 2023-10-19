@@ -22,8 +22,8 @@ final class Order
     private ?string $country = null;
     private ?string $subscriptionId = null;
     private ?string $ipAddress = null;
-    private ?NestedOrderItemCollection $items = null;
-    private ?NestedOrderPaymentCollection $payments = null;
+    private ?NestedOrderItemCollection $orderItems = null;
+    private ?NestedOrderPaymentCollection $orderPayments = null;
 
     public function __construct(
         string $sourceSystem,
@@ -181,26 +181,26 @@ final class Order
         return $this;
     }
 
-    public function getItems(): ?NestedOrderItemCollection
+    public function getOrderItems(): ?NestedOrderItemCollection
     {
-        return $this->items;
+        return $this->orderItems;
     }
 
-    public function setItems(?NestedOrderItemCollection $value): self
+    public function setOrderItems(?NestedOrderItemCollection $value): self
     {
-        $this->items = $value;
+        $this->orderItems = $value;
 
         return $this;
     }
 
-    public function getPayments(): ?NestedOrderPaymentCollection
+    public function getOrderPayments(): ?NestedOrderPaymentCollection
     {
-        return $this->payments;
+        return $this->orderPayments;
     }
 
-    public function setPayments(?NestedOrderPaymentCollection $value): self
+    public function setOrderPayments(?NestedOrderPaymentCollection $value): self
     {
-        $this->payments = $value;
+        $this->orderPayments = $value;
 
         return $this;
     }
