@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Wickedreports\ApiCore\ApiEntity;
 
-use Wickedreports\ApiCore\Collections\ApiEntityCollections\OrderItemCollection;
-use Wickedreports\ApiCore\Collections\ApiEntityCollections\OrderPaymentCollection;
+use Wickedreports\ApiCore\Collections\ApiEntityCollections\NestedOrderItemCollection;
+use Wickedreports\ApiCore\Collections\ApiEntityCollections\NestedOrderPaymentCollection;
 
 final class Order
 {
@@ -22,8 +22,8 @@ final class Order
     private ?string $country = null;
     private ?string $subscriptionId = null;
     private ?string $ipAddress = null;
-    private ?OrderItemCollection $items = null;
-    private ?OrderPaymentCollection $payments = null;
+    private ?NestedOrderItemCollection $orderItems = null;
+    private ?NestedOrderPaymentCollection $orderPayments = null;
 
     public function __construct(
         string $sourceSystem,
@@ -181,26 +181,26 @@ final class Order
         return $this;
     }
 
-    public function getItems(): ?OrderItemCollection
+    public function getOrderItems(): ?NestedOrderItemCollection
     {
-        return $this->items;
+        return $this->orderItems;
     }
 
-    public function setItems(?OrderItemCollection $value): self
+    public function setOrderItems(?NestedOrderItemCollection $value): self
     {
-        $this->items = $value;
+        $this->orderItems = $value;
 
         return $this;
     }
 
-    public function getPayments(): ?OrderPaymentCollection
+    public function getOrderPayments(): ?NestedOrderPaymentCollection
     {
-        return $this->payments;
+        return $this->orderPayments;
     }
 
-    public function setPayments(?OrderPaymentCollection $value): self
+    public function setOrderPayments(?NestedOrderPaymentCollection $value): self
     {
-        $this->payments = $value;
+        $this->orderPayments = $value;
 
         return $this;
     }
