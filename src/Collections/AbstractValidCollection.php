@@ -23,7 +23,7 @@ abstract class AbstractValidCollection implements
 
     public function current()
     {
-        return $this->collection[$this->position];
+        return $this->offsetGet($this->position);
     }
 
     public function next():void
