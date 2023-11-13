@@ -16,7 +16,7 @@ abstract class AbstractValidCollection implements
      * @param iterable $items
      * @throws ValidationException
      */
-    public function __construct(iterable $items)
+    public function __construct(iterable $items = [])
     {
         $this->setCollection($items);
     }
