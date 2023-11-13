@@ -16,17 +16,17 @@ abstract class AbstractValidCollection implements
      * @param iterable $items
      * @throws ValidationException
      */
-    public function __construct(iterable $items)
+    public function __construct(iterable $items = [])
     {
         $this->setCollection($items);
     }
 
     public function current()
     {
-        return $this->collection[$this->position];
+        return $this->offsetGet($this->position);
     }
 
-    public function next():void
+    public function next(): void
     {
         $this->position++;
     }
