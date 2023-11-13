@@ -26,7 +26,7 @@ abstract class AbstractValidCollection implements
         return $this->offsetGet($this->position);
     }
 
-    public function next():void
+    public function next(): void
     {
         $this->position++;
     }
