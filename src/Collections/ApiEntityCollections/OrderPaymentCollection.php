@@ -3,9 +3,8 @@
 namespace Wickedreports\ApiCore\Collections\ApiEntityCollections;
 
 use Wickedreports\ApiCore\ApiEntity\OrderPayment;
-use Wickedreports\ApiCore\Collections\AbstractValidCollection;
 
-class OrderPaymentCollection extends AbstractValidCollection
+class OrderPaymentCollection extends NestedOrderPaymentCollection
 {
     protected function isValidItem($item): bool
     {
