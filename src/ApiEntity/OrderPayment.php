@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Wickedreports\ApiCore\ApiEntity;
 
-final class OrderPayment extends NestedOrderPayment
+class OrderPayment extends NestedOrderPayment
 {
     private string $sourceSystem;
     private string $orderId;
