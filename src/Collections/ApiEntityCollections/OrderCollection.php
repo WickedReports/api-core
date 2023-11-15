@@ -5,7 +5,7 @@ namespace Wickedreports\ApiCore\Collections\ApiEntityCollections;
 use Wickedreports\ApiCore\ApiEntity\Order;
 use Wickedreports\ApiCore\Collections\AbstractValidCollection;
 
-final class OrderCollection extends AbstractValidCollection
+class OrderCollection extends AbstractValidCollection
 {
     protected function isValidItem($item): bool
     {
