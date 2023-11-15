@@ -7,7 +7,7 @@ namespace Wickedreports\ApiCore\ApiEntity;
 use Wickedreports\ApiCore\Collections\ApiEntityCollections\NestedOrderItemCollection;
 use Wickedreports\ApiCore\Collections\ApiEntityCollections\NestedOrderPaymentCollection;
 
-final class Order
+class Order
 {
     private string $sourceSystem;
     private string $sourceId;

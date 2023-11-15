@@ -2,7 +2,7 @@
 
 namespace Wickedreports\ApiCore\ApiEntity;
 
-final class Contact
+class Contact
 {
     private string $sourceSystem;
     private string $sourceId;

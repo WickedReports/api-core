@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Wickedreports\ApiCore\ApiEntity;
 
-final class Product
+class Product
 {
     private string $sourceSystem;
     private string $sourceId;

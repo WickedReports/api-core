@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Wickedreports\ApiCore\ApiEntity;
 
-final class OrderItem extends NestedOrderItem
+class OrderItem extends NestedOrderItem
 {
     private string $sourceSystem;
     private string $orderId;
