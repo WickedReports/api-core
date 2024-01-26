@@ -2,12 +2,20 @@
     "name": "wickedreports/api-core",
     "type": "library",
     "license": "MIT",
+    "require": {
+        "php": ">=7.4"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.0"
+    },
     "autoload": {
         "psr-4": {
             "Wickedreports\\ApiCore\\": "src/"
         }
     },
-    "require": {
-        "php": ">=7.4"
+    "autoload-dev": {
+        "psr-4": {
+            "Wickedreports\\ApiCore\\Tests\\": "tests/"
+        }
     }
 }
