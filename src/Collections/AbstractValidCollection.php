@@ -31,9 +31,13 @@ abstract class AbstractValidCollection extends ArrayIterator
 
     public function last()
     {
-        $arrayCopy = $this->getArrayCopy();
+        $last = null;
 
-        return array_pop($arrayCopy);
+        foreach ($this as $value) {
+            $last = $value;
+        }
+
+        return $last;
     }
 
     /**
