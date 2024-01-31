@@ -13,13 +13,11 @@ abstract class AbstractValidCollection extends ArrayIterator
      */
     public function __construct(iterable $items = [])
     {
-        foreach ($items as $key => $item) {
-            if (!$this->isValidItem($item)) {
-                throw new ValidationException('Invalid list item: ' . $key);
-            }
-        }
+        parent::__construct();
 
-        parent::__construct($items);
+        foreach ($items as $item) {
+            $this->add($item);
+        }
     }
 
     /**
