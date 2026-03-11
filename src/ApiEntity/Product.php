@@ -9,13 +9,13 @@ class Product
     private string $sourceSystem;
     private string $sourceId;
     private string $productName;
-    private float $productPrice;
+    private ?float $productPrice;
 
     public function __construct(
         string $sourceSystem,
         string $sourceId,
         string $productName,
-        float $productPrice
+        ?float $productPrice
     ) {
         $this->sourceSystem = $sourceSystem;
         $this->sourceId = $sourceId;
@@ -59,12 +59,12 @@ class Product
         return $this;
     }
 
-    public function getProductPrice(): float
+    public function getProductPrice(): ?float
     {
         return $this->productPrice;
     }
 
-    public function setProductPrice(float $value): self
+    public function setProductPrice(?float $value): self
     {
         $this->productPrice = $value;
 
