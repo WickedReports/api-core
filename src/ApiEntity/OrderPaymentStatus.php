@@ -12,4 +12,5 @@ class OrderPaymentStatus
     public const PROCESSING = 'PROCESSING';
     public const REFUNDED = 'REFUNDED';
     public const PARTIALLY_REFUNDED = 'PARTIALLY REFUNDED';
+    public const VOIDED = 'VOIDED';
 }
