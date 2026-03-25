@@ -14,4 +14,5 @@ class OrderPaymentStatus
     public const PARTIALLY_REFUNDED = 'PARTIALLY REFUNDED';
     public const VOIDED = 'VOIDED';
     public const TAX = 'TAX';
+    public const DISCOUNT = 'DISCOUNT';
 }
